@@ -466,4 +466,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  /* ================================================================
+     10. PHONE MOCKUP SWAP INTERACTION
+     ------------------------------------------------------------------
+     Toggles the .is-swapped class on .hero-visual--dual when a phone
+     mockup is clicked. This brings the back phone to the front.
+     ================================================================ */
+
+  const heroVisualDual = document.querySelector('.hero-visual--dual');
+  const phoneMockups = document.querySelectorAll('.phone-mockup');
+
+  if (heroVisualDual && phoneMockups.length > 0) {
+    phoneMockups.forEach(phone => {
+      phone.addEventListener('click', () => {
+        heroVisualDual.classList.toggle('is-swapped');
+      });
+    });
+  }
+
 }); // end DOMContentLoaded
