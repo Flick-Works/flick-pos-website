@@ -1086,6 +1086,21 @@ p {
   z-index: 3;
 }
 
+/* Swapped State - Desktop */
+.hero-visual--dual.is-swapped .phone-mockup--analytics {
+  transform: translateZ(80px) rotateY(15deg) translateX(-260px);
+  opacity: 1;
+  filter: blur(0px);
+  z-index: 4;
+}
+
+.hero-visual--dual.is-swapped .phone-mockup--home {
+  transform: translateZ(-100px) rotateY(-15deg) translateX(280px) scale(0.9);
+  opacity: 0.8;
+  filter: blur(1px);
+  z-index: 1;
+}
+
 .phone-glow {
   position: absolute;
   width: 250px;
@@ -1125,8 +1140,9 @@ p {
     inset 0 1px 0 hsla(255, 100%, 100%, 0.12),
     inset 0 -2px 0 hsla(0, 0%, 0%, 0.3);
   transform-style: preserve-3d;
-  transition: transform 0.1s ease-out, filter 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.6s ease, opacity 0.6s ease, z-index 0s 0.3s;
   border: 1px solid hsla(252, 75%, 68%, 0.15);
+  cursor: pointer;
 }
 
 .hero-visual:hover .phone-mockup--analytics {
@@ -1478,8 +1494,23 @@ p {
 
 @media (max-width: 767px) {
   .hero-visual { height: 480px; }
-  .hero-visual--dual .phone-mockup--analytics { transform: translateZ(-50px) rotateY(-5deg) translateX(30px) scale(0.85); }
-  .hero-visual--dual .phone-mockup--home { transform: translateZ(20px) rotateY(5deg) translateX(-10px) scale(0.95); }
+  .hero-visual--dual .phone-mockup--analytics { transform: translateZ(-50px) rotateY(-5deg) translateX(60px) scale(0.85); }
+  .hero-visual--dual .phone-mockup--home { transform: translateZ(20px) rotateY(5deg) translateX(-30px) scale(0.95); }
+
+  /* Swapped State - Mobile */
+  .hero-visual--dual.is-swapped .phone-mockup--analytics { 
+    transform: translateZ(20px) rotateY(5deg) translateX(-90px) scale(0.95); 
+    opacity: 1;
+    filter: blur(0px);
+    z-index: 4;
+  }
+  .hero-visual--dual.is-swapped .phone-mockup--home { 
+    transform: translateZ(-50px) rotateY(-5deg) translateX(120px) scale(0.85); 
+    opacity: 0.8;
+    filter: blur(1px);
+    z-index: 1;
+  }
+
   .float-badge-1 { top: 0; right: -5%; font-size: 11px; padding: 6px 12px; }
   .float-badge-2 { bottom: 5%; left: -5%; font-size: 11px; padding: 6px 12px; }
 }
