@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Flick POS — Lightning-Fast Point of Sale for Android</title>
+  <meta name="description" content="Flick POS is a high-performance Android Point-of-Sale app with lightning-fast checkout, real-time inventory management, and Khata (customer ledger). Built for speed, reliability, and security.">
+  <meta name="keywords" content="POS, Point of Sale, Android POS, Inventory Management, Khata, Customer Ledger, Fast Checkout, Flick POS">
+  <meta name="author" content="Flick POS">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Flick POS — Lightning-Fast Point of Sale for Android">
+  <meta property="og:description" content="Run your business smarter with lightning-fast checkout, real-time inventory, and built-in customer ledger. All on your Android device.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flickpos.app">
+  <!-- <meta property="og:image" content="assets/og-image.png"> -->
+
+  <!-- Favicon (placeholder) -->
+  <!-- <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"> -->
+
+  <!-- Google Fonts — modern geometric display with a soft UI sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets (Phase 2+) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 3D Ambient Background -->
+  <div class="ambient-bg" aria-hidden="true">
+  </div>
+
+  <!-- ========================================================
+       SKIP LINK — Accessibility: skip straight to main content
+       ======================================================== -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+
+  <!-- ========================================================
+       HEADER / NAVIGATION
+       Fixed top nav with logo, nav links, and CTA button.
+       Mobile: collapses into hamburger menu.
+       ======================================================== -->
+  <header id="site-header" class="site-header">
+    <div class="container header-inner">
+
+      <!-- Brand / Logo -->
+      <a href="#" class="brand" aria-label="Flick POS Home">
+        <!-- Inline SVG logo mark — a stylised lightning bolt inside a rounded square -->
+        <svg class="brand-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="brand-gradient" x1="4" y1="4" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#8F72FF"/>
+              <stop offset="1" stop-color="#14D7A0"/>
+            </linearGradient>
+          </defs>
+          <rect width="36" height="36" rx="10" fill="url(#brand-gradient)" class="brand-bg"/>
+          <path d="M20.5 8L12 20h6l-2.5 8L24 16h-6l2.5-8z" fill="white"/>
+        </svg>
+        <span class="brand-name">Flick<span class="brand-accent">POS</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+          <li><a href="#waitlist" class="nav-link nav-link--cta">Join Waitlist</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Toggle -->
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to night mode"
+        aria-pressed="false"
+        title="Switch to night mode"
+      >
+        <span class="theme-toggle-icon theme-toggle-icon--sun" aria-hidden="true">☼</span>
+        <span class="theme-toggle-icon theme-toggle-icon--moon" aria-hidden="true">◐</span>
+      </button>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button
+        id="menu-toggle"
+        class="menu-toggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ========================================================
+       MAIN CONTENT
+       ======================================================== -->
+  <main id="main-content">
+
+
+    <!-- ======================================================
+         HERO SECTION
+         Primary above-the-fold area. Headline, sub-headline,
+         CTA buttons, and an app mockup visual.
+         ====================================================== -->
+    <section id="hero" class="hero section">
+      <div class="container hero-inner">
+
+        <!-- Text Content -->
+        <div class="hero-content">
+          <p class="hero-eyebrow">Android POS — Built for Speed</p>
+          <h1 class="hero-title">
+            Your Business,<br>
+            <span class="text-gradient">Lightning Fast.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Flick POS gives you blazing-fast checkout, real-time inventory tracking, and a built-in customer ledger (Khata) — all from your Android device. No clutter. No lag. Just performance.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero-actions">
+            <a href="#waitlist" class="btn btn-primary" id="hero-cta-primary">
+              Join the Waitlist
+              <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#features" class="btn btn-secondary" id="hero-cta-secondary">
+              See Features
+            </a>
+          </div>
+
+          <!-- Social Proof / Trust Badges (small stats strip) -->
+          <div class="hero-trust">
+            <div class="trust-item">
+              <span class="trust-value">< 50ms</span>
+              <span class="trust-label">Checkout Speed</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <span class="trust-value">Real-time</span>
+              <span class="trust-label">Inventory Sync</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <span class="trust-value">100%</span>
+              <span class="trust-label">Offline Ready</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D App Mockup -->
+        <div class="hero-visual hero-visual--dual" data-tilt>
+          <div class="cursor-aura" aria-hidden="true"></div>
+          <svg class="growth-path" viewBox="0 0 520 360" fill="none" aria-hidden="true">
+            <path class="growth-path-line" d="M16 310C94 296 102 254 164 268C224 281 242 228 294 232C354 237 352 166 406 174C451 180 456 106 504 42"/>
+            <path class="growth-path-glow" d="M16 310C94 296 102 254 164 268C224 281 242 228 294 232C354 237 352 166 406 174C451 180 456 106 504 42"/>
+          </svg>
+          <div class="phone-glow phone-glow--home" aria-hidden="true"></div>
+          <div class="phone-glow phone-glow--analytics" aria-hidden="true"></div>
+
+          <!-- BACKGROUND PHONE (Analytics) -->
+          <div class="phone-mockup phone-mockup--analytics">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen phone-screen--dark">
+              <div class="app-ui analytics-ui admin-panel-ui">
+                <div class="admin-header">
+                  <button class="admin-back-btn" type="button">← <span>Billing</span></button>
+                  <div class="analytics-title">Admin Panel</div>
+                  <div class="admin-header-actions"><button type="button">⚙</button><button type="button">⋮</button></div>
+                </div>
+                <div class="admin-revenue-card">
+                  <div><div class="admin-label">Total Network Revenue</div><div class="admin-revenue">₹2,242.20</div></div>
+                  <div class="admin-store-icon">▥</div>
+                </div>
+                <div class="admin-metrics">
+                  <div class="admin-metric"><div class="admin-metric-icon">₹</div><div class="admin-label">Total Profit</div><strong>₹432.20</strong></div>
+                  <div class="admin-metric"><div class="admin-metric-icon admin-metric-icon--cyan">▤</div><div class="admin-label">Total Bills</div><strong>16</strong></div>
+                </div>
+                <div class="admin-section-label">QUICK ACTIONS</div>
+                <button class="admin-history-btn" type="button"><span class="admin-action-icon">▤</span><span><strong>Global Sales History</strong><small>View all staff transactions</small></span><b>→</b></button>
+                <div class="admin-section-heading"><span>TEAM MEMBERS</span><small>3 staff</small></div>
+                <button class="admin-team-card" type="button" data-staff="Sohan"><span class="admin-person-icon">●</span><span><strong>Sohan <em>Staff</em></strong><small>Radhe Shyam Store</small><small>474385@flickpos.com</small></span><b>→</b></button>
+                <button class="admin-team-card" type="button" data-staff="Vansh"><span class="admin-person-icon">●</span><span><strong>Vansh <em>Staff</em></strong><small>Flick Ki Dukan</small><small>622728@flickpos.com</small></span><b>→</b></button>
+              </div>
+              <div class="app-ui staff-profile-ui">
+                <div class="profile-header"><button class="profile-back-btn" type="button">←</button><div><h3>Staff Identity Hub</h3><span class="profile-email">622728@flickpos.com</span></div></div>
+                <div class="profile-person"><div class="profile-avatar">V</div><div><strong class="profile-name">Vansh</strong><small class="profile-email">622728@flickpos.com</small><span class="profile-uid">UID: mD2dbxJMpT0K...</span></div><b><i></i> Active</b></div>
+                <div class="profile-section-label">EXECUTIVE WORKSPACE</div>
+                <div class="profile-actions"><button type="button"><span>▣</span><strong>Udhaar (Khata)</strong><small>Customer Ledgers</small></button><button type="button"><span>▤</span><strong>Bills &amp; Sales</strong><small>View Receipts</small></button><button type="button"><span>▰</span><strong>Inventory</strong><small>Live Stock Status</small></button><button type="button"><span>⌁</span><strong>Performance</strong><small>Analytics &amp; Reports</small></button></div>
+                <div class="profile-section-label">RECENT ACTIVITY STREAM</div>
+                <div class="profile-activity"><span>▤</span><div><strong>Billed ₹50 (2 pcs)</strong><small>25 Aug, 10:25 am</small></div></div>
+                <div class="profile-activity"><span>▤</span><div><strong>Billed ₹525 (21 pcs)</strong><small>19 Aug, 08:23 pm</small></div></div>
+                <div class="profile-activity"><span>▰</span><div><strong>Added new product: 'Chips' (25.0 units)</strong><small>19 Aug, 08:23 pm</small></div></div>
+              </div>
+              <div class="app-ui global-history-ui">
+                <div class="history-header"><button class="history-back-btn" type="button">←</button><div><h3>Global Sales History</h3><span>All Staff Transactions</span></div></div>
+                <div class="history-card"><div class="history-card-head"><span class="history-icon">▤</span><span><strong>Flick</strong><small>Aug 27, 2026 • 07:49 pm</small></span></div><div class="history-line"><span>6.0 pcs x Chips</span><b>₹120</b></div><div class="history-total"><span>Subtotal: ₹120</span><span class="history-discount">Discount: -₹2</span><strong>Grand Total: ₹118</strong></div></div>
+                <div class="history-card"><div class="history-card-head"><span class="history-icon">▤</span><span><strong>Flick</strong><small>Aug 27, 2026 • 01:06 pm</small></span></div><div class="history-line"><span>6.0 pcs x Chips</span><b>₹120</b></div><div class="history-total"><strong>Total: ₹120</strong></div></div>
+                <div class="history-card"><div class="history-card-head"><span class="history-icon">▤</span><span><strong>Vansh</strong><small>Aug 25, 2026 • 10:25 am</small></span></div><div class="history-line"><span>2.0 pcs x Chips</span><b>₹50</b></div><div class="history-total"><strong>Total: ₹50</strong></div></div>
+                <div class="history-card"><div class="history-card-head"><span class="history-icon">▤</span><span><strong>Patel Store</strong><small>Aug 25, 2026 • 10:20 am</small></span></div><div class="history-line"><span>3.0 pcs x Chips</span><b>₹60</b></div><div class="history-total"><strong>Total: ₹60</strong></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOREGROUND PHONE (Home) -->
+          <div class="phone-mockup phone-mockup--home">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen phone-screen--dark">
+              <div class="app-ui home-ui">
+                <div class="home-header">
+                  <div class="home-brand">Flick <span class="home-brand-accent">POS</span></div>
+                  <div class="home-header-actions">
+                    <div class="icon-medal">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-tertiary)" stroke-width="2" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    </div>
+                    <div class="icon-settings">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="quick-sell-banner">
+                  <div class="quick-sell-text">
+                    <div class="quick-sell-title">Quick sell</div>
+                    <div class="quick-sell-subtitle">Open checkout and bill items</div>
+                  </div>
+                  <button class="quick-sell-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                </div>
+
+                <div class="home-section-title">ACTIONS</div>
+                
+                <div class="actions-grid">
+                  <div class="action-btn" data-target="billing-ui">
+                    <div class="action-icon action-icon--sell">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.29 5.14A2 2 0 0 0 6.53 21h10.94M10 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
+                    </div>
+                    <span class="action-label">Sell</span>
+                  </div>
+                  <div class="action-btn" data-target="restock-ui">
+                    <div class="action-icon action-icon--restock">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    </div>
+                    <span class="action-label">Restock</span>
+                  </div>
+                  <div class="action-btn" data-target="add-inventory-ui">
+                    <div class="action-icon action-icon--add">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </div>
+                    <span class="action-label">Add</span>
+                  </div>
+                  <div class="action-btn" data-target="inventory-ui">
+                    <div class="action-icon action-icon--stock">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    </div>
+                    <span class="action-label">Stock</span>
+                  </div>
+                  <div class="action-btn" data-target="khata-ui">
+                    <div class="action-icon action-icon--khata">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <span class="action-label">Khata</span>
+                  </div>
+                  <div class="action-btn">
+                    <div class="action-icon action-icon--reports">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <span class="action-label">Reports</span>
+                  </div>
+                </div>
+
+                <div class="sales-history-banner">
+                  <div class="sales-history-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <span class="sales-history-text">Sales history</span>
+                  <span class="sales-history-arrow">→</span>
+                </div>
+
+                <div class="app-ui sub-ui sales-analytics-ui" id="sales-analytics-ui">
+                  <div class="sub-header"><button class="back-btn" type="button">←</button><div class="sub-header-title">Sales Analytics</div></div>
+                  <div class="sales-summary"><div class="summary-label">Total Revenue</div><strong>₹747.20</strong><div class="summary-divider"></div><div class="summary-columns"><span>Total Bills<b>9 generated</b></span><span>Discount Given<b class="summary-discount">₹18.80</b></span></div></div>
+                  <div class="sales-section-label">RECENT TRANSACTIONS</div>
+                  <div class="transaction-card"><div class="transaction-head"><span class="transaction-icon">▤</span><span><strong>Bill #TXN-FB7694EB</strong><small>27 Aug, 07:49 pm<br>Billed by: Flick</small></span><b class="share-icon">•</b></div><div class="transaction-line"><span>6 pcs Chips</span><strong>6 Items</strong></div><div class="transaction-total"><span>Subtotal: ₹120</span><span>Discount: -₹2.40</span><strong>Grand Total: ₹117.60</strong></div></div>
+                  <div class="transaction-card"><div class="transaction-head"><span class="transaction-icon">▤</span><span><strong>Bill #TXN-4D6A24A4</strong><small>27 Aug, 01:06 pm<br>Billed by: Flick</small></span><b class="share-icon">•</b></div><div class="transaction-line"><span>6 pcs Chips</span><strong>6 Items</strong></div><div class="transaction-total"><strong>Total: ₹120</strong></div></div>
+                  <div class="transaction-card"><div class="transaction-head"><span class="transaction-icon">▤</span><span><strong>Bill #TXN-DC52D495</strong><small>25 Aug, 10:20 am</small></span><b class="share-icon">•</b></div><div class="transaction-line"><span>2 pcs Chips</span><strong>2 Items</strong></div><div class="transaction-total"><strong>Total: ₹50</strong></div></div>
+                </div>
+
+                <div class="bottom-nav">
+                  <div class="nav-item nav-item--active">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22" stroke="var(--color-surface)" stroke-width="2"/></svg>
+                  </div>
+                  <div class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                  </div>
+                  <div class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  </div>
+                  <div class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                  <div class="nav-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                </div>
+              </div>
+
+              <!-- Point of Sale (Billing) UI -->
+              <div class="app-ui sub-ui billing-ui" id="billing-ui">
+                <div class="sub-header">
+                  <button class="back-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>
+                  <div class="sub-header-title">Point of Sale ⚡</div>
+                </div>
+                <div class="sub-ui-content">
+                  <div class="sub-banner sub-banner--laser">
+                    <div class="sub-banner-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5a2 2 0 0 1 2-2h4v2H5v4H3V5zm14-2h4a2 2 0 0 1 2 2v4h-2V5h-4V3zM3 19v-4h2v4h4v2H5a2 2 0 0 1-2-2zm18 0a2 2 0 0 1-2 2h-4v-2h4v-4h2v4zM7 7h10v10H7V7zm2 2v6h6V9H9z"/></svg></div>
+                    <div class="sub-banner-text">
+                      <div class="sub-banner-title">Continuous Laser Scanner ⚡</div>
+                      <div class="sub-banner-subtitle">Scan items rapidly without closing camera</div>
+                    </div>
+                    <div class="sub-banner-arrow">></div>
+                  </div>
+                  <div class="search-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" placeholder="Search Item...">
+                  </div>
+                  <div class="instruction-text">Tap items below or enter quantity manually:</div>
+                  <div class="item-card item-card--active">
+                    <div class="item-info">
+                      <div class="item-name">Chips</div>
+                      <div class="item-meta">₹20 &bull; 59 pcs left</div>
+                    </div>
+                    <div class="item-actions">
+                      <button class="qty-btn btn-minus">-</button>
+                      <span class="qty-value">2</span>
+                      <button class="qty-btn btn-plus">+</button>
+                    </div>
+                    <div class="item-card-dropdown">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                  </div>
+                  
+                  <div class="checkout-footer">
+                    <div class="payment-tabs">
+                      <button class="payment-tab active"><span class="tab-icon">💵</span> Cash / Online</button>
+                      <button class="payment-tab"><span class="tab-icon">📓</span> Udhaar (Khata)</button>
+                    </div>
+                    <div class="checkout-row">
+                      <span class="checkout-label">Subtotal (2 items)</span>
+                      <span class="checkout-value">₹40</span>
+                    </div>
+                    <div class="checkout-row">
+                      <span class="checkout-label text-highlight">Discount (%)</span>
+                      <input type="text" class="discount-input" placeholder="">
+                    </div>
+                    <div class="checkout-row checkout-row--total">
+                      <span class="checkout-label">Final Total</span>
+                      <span class="checkout-value text-green">₹ 40</span>
+                    </div>
+                    <button class="btn-complete-sale">Complete Sale</button>
+                  </div>
+                  
+                  <div class="bottom-nav">
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="nav-item nav-item--active">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="21" r="2"/><circle cx="20" cy="21" r="2"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    </div>
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Restock UI -->
+              <div class="app-ui sub-ui restock-ui" id="restock-ui">
+                <div class="sub-header">
+                  <button class="back-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>
+                  <div class="sub-header-title">Quick Restock 📦</div>
+                </div>
+                <div class="sub-ui-content">
+                  <div class="sub-banner sub-banner--restock">
+                    <div class="sub-banner-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5a2 2 0 0 1 2-2h4v2H5v4H3V5zm14-2h4a2 2 0 0 1 2 2v4h-2V5h-4V3zM3 19v-4h2v4h4v2H5a2 2 0 0 1-2-2zm18 0a2 2 0 0 1-2 2h-4v-2h4v-4h2v4zM7 7h10v10H7V7zm2 2v6h6V9H9z"/></svg></div>
+                    <div class="sub-banner-text">
+                      <div class="sub-banner-title">Scan Carton Barcode ⚡</div>
+                      <div class="sub-banner-subtitle">Instant shipment update without typing</div>
+                    </div>
+                    <div class="sub-banner-arrow">></div>
+                  </div>
+                  <div class="search-box search-box--tall">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" placeholder="Search by product name, brand, or barcode...">
+                  </div>
+                  <div class="filter-tabs">
+                    <button class="filter-tab active">All Items</button>
+                    <button class="filter-tab">Low Stock ⚠️</button>
+                    <button class="filter-tab">Expiring Soon ⏳</button>
+                  </div>
+                  <div class="item-card item-card--restock">
+                    <div class="item-info">
+                      <div class="item-name">Chips</div>
+                      <div class="item-meta">General Distributor &bull; Groceries</div>
+                    </div>
+                    <div class="item-stock-info">
+                      <div class="stock-qty">61.0</div>
+                      <div class="stock-label">in stock</div>
+                    </div>
+                    <button class="btn-add">+ Add</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Inventory UI -->
+              <div class="app-ui sub-ui inventory-ui" id="inventory-ui">
+                <div class="sub-header">
+                  <button class="back-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>
+                  <div class="sub-header-title">Inventory</div>
+                  <div class="header-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="16" y1="12" x2="16" y2="16"/><line x1="8" y1="10" x2="8" y2="16"/></svg></div>
+                </div>
+                <div class="sub-ui-content inventory-content">
+                  <div class="search-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" placeholder="Search Item...">
+                  </div>
+                  <div class="item-card item-card--inventory">
+                    <div class="item-info">
+                      <div class="item-name">Chips</div>
+                      <div class="item-meta">Groceries</div>
+                    </div>
+                    <div class="item-price-info">
+                      <div class="item-price">₹20</div>
+                      <div class="item-stock">Stock: 61 pcs</div>
+                    </div>
+                  </div>
+                  
+                  <div class="bottom-nav">
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="2"/><circle cx="20" cy="21" r="2"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    </div>
+                    <div class="nav-item nav-item--active">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Khata Book UI -->
+              <div class="app-ui sub-ui khata-ui" id="khata-ui">
+                <div class="sub-header">
+                  <button class="back-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>
+                  <div class="sub-header-title">Khata Book</div>
+                  <div class="header-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                </div>
+                <div class="sub-ui-content khata-content">
+                  <div class="khata-summary">
+                    <div class="summary-label">Net Pending Credit (Udhaar)</div>
+                    <div class="summary-amount">₹2,159.62</div>
+                    <div class="summary-meta">1 active khata</div>
+                  </div>
+                  <div class="search-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" placeholder="Search by name or phone...">
+                  </div>
+                  <div class="item-card item-card--khata">
+                    <div class="khata-avatar">S</div>
+                    <div class="item-info">
+                      <div class="item-name">Sohan</div>
+                      <div class="item-meta">📞 9909245527<br>25 Aug, 09:01 pm</div>
+                    </div>
+                    <div class="khata-amount-info">
+                      <div class="khata-amount">₹2,159.62</div>
+                      <div class="khata-label">You will get</div>
+                    </div>
+                  </div>
+                  
+                  <div class="bottom-nav">
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="2"/><circle cx="20" cy="21" r="2"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    </div>
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div class="nav-item nav-item--active">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div class="nav-item">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Add Inventory Item UI -->
+              <div class="app-ui sub-ui add-inventory-ui" id="add-inventory-ui">
+                <div class="sub-header">
+                  <button class="back-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>
+                  <div class="sub-header-title">Add Inventory Item</div>
+                </div>
+                <div class="sub-ui-content add-inventory-content">
+                  <div class="sub-banner sub-banner--magic">
+                    <div class="sub-banner-title">✨ Magic Scanner</div>
+                    <div class="magic-input-row">
+                      <div class="input-box">
+                        <input type="text" placeholder="Barcode Number">
+                      </div>
+                      <button class="btn-icon-blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5a2 2 0 0 1 2-2h4v2H5v4H3V5zm14-2h4a2 2 0 0 1 2 2v4h-2V5h-4V3zM3 19v-4h2v4h4v2H5a2 2 0 0 1-2-2zm18 0a2 2 0 0 1-2 2h-4v-2h4v-4h2v4zM7 7h10v10H7V7zm2 2v6h6V9H9z"/></svg></button>
+                      <button class="btn-fetch">Fetch</button>
+                    </div>
+                  </div>
+                  
+                  <div class="form-container">
+                    <div class="form-field">
+                      <input type="text" placeholder="Product Name *">
+                    </div>
+                    <div class="form-row">
+                      <div class="form-field form-field--labeled">
+                        <label>Category</label>
+                        <input type="text" value="Groceries">
+                      </div>
+                      <div class="form-field form-field--labeled">
+                        <label>Brand</label>
+                        <input type="text" value="General Distribut">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-field form-field--labeled">
+                        <label>Purchase (₹)</label>
+                        <input type="text" placeholder="">
+                      </div>
+                      <div class="form-field form-field--labeled">
+                        <label>Selling (₹) *</label>
+                        <input type="text" placeholder="">
+                      </div>
+                    </div>
+                    
+                    <div class="form-section-title">Unit of Measurement</div>
+                    <div class="uom-tabs">
+                      <button class="uom-tab active">pcs</button>
+                      <button class="uom-tab">kg</button>
+                      <button class="uom-tab">g</button>
+                      <button class="uom-tab">L</button>
+                      <button class="uom-tab">ml</button>
+                    </div>
+                    
+                    <div class="form-row">
+                      <div class="form-field">
+                        <input type="text" placeholder="Initial Stock *">
+                      </div>
+                      <div class="form-field form-field--labeled">
+                        <label>Low Alert</label>
+                        <input type="text" value="5">
+                      </div>
+                    </div>
+                    
+                    <button class="btn-save-product">Save Product</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================
+         FEATURES SECTION
+         Three-column card grid showcasing core features:
+         Checkout, Inventory, and Khata.
+         ====================================================== -->
+    <section id="features" class="features section">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Core Features</p>
+          <h2 class="section-title">Everything You Need to Run Your Store</h2>
+          <p class="section-subtitle">
+            Designed from the ground up for Indian retail. Three powerful modules, one seamless experience.
+          </p>
+        </div>
+
+        <!-- Feature Cards Grid -->
+        <div class="features-grid reveal-stagger">
+
+          <!-- Feature 1: Lightning Checkout -->
+          <article class="feature-card reveal card-3d" id="feature-checkout" data-tilt data-tilt-max="18">
+            <div class="feature-icon-wrap">
+              <svg class="feature-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Lightning Checkout</h3>
+            <p class="feature-description">
+              Process sales in under 50 milliseconds. Barcode scanning, quick-add items, and instant billing — no waiting, no freezing.
+            </p>
+            <ul class="feature-highlights">
+              <li>Barcode & search-based item entry</li>
+              <li>Instant bill generation</li>
+              <li>Multi-payment mode support</li>
+            </ul>
+          </article>
+
+          <!-- Feature 2: Real-time Inventory -->
+          <article class="feature-card reveal card-3d" id="feature-inventory" data-tilt data-tilt-max="18">
+            <div class="feature-icon-wrap">
+              <svg class="feature-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0022 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Real-time Inventory</h3>
+            <p class="feature-description">
+              Every sale automatically updates your stock. Know exactly what's in, what's low, and what's out — in real time.
+            </p>
+            <ul class="feature-highlights">
+              <li>Auto stock deduction on sale</li>
+              <li>Low-stock alerts</li>
+              <li>Bulk import & category management</li>
+            </ul>
+          </article>
+
+          <!-- Feature 3: Khata (Customer Ledger) -->
+          <article class="feature-card reveal card-3d" id="feature-khata" data-tilt data-tilt-max="18">
+            <div class="feature-icon-wrap">
+              <svg class="feature-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                <line x1="8" y1="7" x2="16" y2="7"/>
+                <line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Khata — Customer Ledger</h3>
+            <p class="feature-description">
+              Track credit, payments, and outstanding balances for every customer. Digital Khata that's always accurate and instantly accessible.
+            </p>
+            <ul class="feature-highlights">
+              <li>Per-customer credit tracking</li>
+              <li>Payment history & reminders</li>
+              <li>One-tap balance settlement</li>
+            </ul>
+          </article>
+
+        </div><!-- /.features-grid -->
+      </div>
+    </section>
+
+
+    <!-- ======================================================
+         HOW IT WORKS SECTION
+         Simple 3-step visual flow showing the user journey.
+         ====================================================== -->
+    <section id="how-it-works" class="how-it-works section">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Simple Setup</p>
+          <h2 class="section-title">Up and Running in Minutes</h2>
+          <p class="section-subtitle">
+            No complicated onboarding. Install, set up your store, and start selling.
+          </p>
+        </div>
+
+        <!-- Steps -->
+        <div class="steps-grid reveal-stagger">
+
+          <div class="step-card reveal card-3d" data-tilt>
+            <div class="step-number" aria-hidden="true">01</div>
+            <h3 class="step-title">Get Early Access</h3>
+            <p class="step-description">
+              Join the waitlist and be among the first to try Flick POS when it launches. We will help you get set up on your Android phone or tablet.
+            </p>
+          </div>
+
+          <div class="step-card reveal card-3d" data-tilt>
+            <div class="step-number" aria-hidden="true">02</div>
+            <h3 class="step-title">Add Your Products</h3>
+            <p class="step-description">
+              Quickly add your inventory manually or import in bulk via CSV. Organise by categories.
+            </p>
+          </div>
+
+          <div class="step-card reveal card-3d" data-tilt>
+            <div class="step-number" aria-hidden="true">03</div>
+            <h3 class="step-title">Start Selling</h3>
+            <p class="step-description">
+              Open the checkout, scan or search items, and generate bills instantly. That's it.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================================================
+         ROADMAP / FUTURE INTEGRATIONS TEASER
+         Showcases upcoming features to build excitement.
+         ====================================================== -->
+    <section id="roadmap" class="roadmap section">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Coming Soon</p>
+          <h2 class="section-title">What's on the Horizon</h2>
+          <p class="section-subtitle">
+            We're just getting started. Here's a sneak peek at what's coming to Flick POS.
+          </p>
+        </div>
+
+        <!-- Roadmap Items -->
+        <div class="roadmap-grid reveal-stagger">
+
+          <div class="roadmap-card reveal card-3d" data-tilt>
+            <div class="roadmap-icon-wrap">
+              <!-- Distributor network icon -->
+              <svg class="roadmap-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="5" r="2.5"/>
+                <circle cx="5" cy="18" r="2.5"/>
+                <circle cx="19" cy="18" r="2.5"/>
+                <path d="M12 7.5v4M10.2 12.5L6.8 16M13.8 12.5l3.4 3.5"/>
+              </svg>
+            </div>
+            <h3 class="roadmap-title">Distributor Access</h3>
+            <p class="roadmap-description">
+              Connect with trusted distributors, discover better wholesale pricing, and keep your shelves stocked with less effort.
+            </p>
+            <span class="roadmap-badge">In Development</span>
+          </div>
+
+          <div class="roadmap-card reveal card-3d" data-tilt>
+            <div class="roadmap-icon-wrap">
+              <!-- Hardware integration icon -->
+              <svg class="roadmap-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="7" height="7" rx="1.5"/>
+                <rect x="14" y="13" width="7" height="7" rx="1.5"/>
+                <path d="M10 7.5h4M17.5 13V9.5a2 2 0 00-2-2H14M7 11v5a2 2 0 002 2h5"/>
+              </svg>
+            </div>
+            <h3 class="roadmap-title">Hardware Integration</h3>
+            <p class="roadmap-description">
+              Bring printers, barcode scanners, cash drawers, and other retail hardware together in one smooth checkout workflow.
+            </p>
+            <span class="roadmap-badge">Coming Soon</span>
+          </div>
+
+          <div class="roadmap-card reveal card-3d" data-tilt>
+            <div class="roadmap-icon-wrap">
+              <!-- Web dashboard icon -->
+              <svg class="roadmap-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3 class="roadmap-title">Web Admin Dashboard</h3>
+            <p class="roadmap-description">
+              Manage your stores from a browser with multi-store analytics, staff roles, and remote inventory control.
+            </p>
+            <span class="roadmap-badge">Planned</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ======================================================
+         WAITLIST / CTA SECTION
+         Email capture form for early access signups.
+         ====================================================== -->
+    <section id="waitlist" class="waitlist section">
+      <div class="container">
+        <div class="waitlist-inner reveal card-3d" data-tilt>
+
+          <div class="waitlist-content">
+            <p class="waitlist-status">Launching soon for Android</p>
+            <h2 class="waitlist-title">Be the First to Try Flick POS</h2>
+            <p class="waitlist-subtitle">
+              Join our early access waitlist. We'll notify you when Flick POS is ready and guide you through getting started.
+            </p>
+          </div>
+
+          <!-- Waitlist Form -->
+          <form id="waitlist-form" class="waitlist-form" aria-label="Join the waitlist">
+            <div class="form-group">
+              <label for="waitlist-email" class="sr-only">Email address</label>
+              <input
+                type="email"
+                id="waitlist-email"
+                name="email"
+                class="form-input"
+                placeholder="you@example.com"
+                required
+                autocomplete="email"
+              >
+              <button type="submit" class="btn btn-primary form-submit" id="waitlist-submit">
+                Get Early Access
+              </button>
+            </div>
+            <p class="form-disclaimer">
+              No spam, ever. We'll only email you about launch updates.
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========================================================
+       FOOTER
+       Company info, quick links, social media, and legal.
+       ======================================================== -->
+  <footer id="site-footer" class="site-footer">
+    <div class="container footer-inner">
+
+      <!-- Footer Brand -->
+      <div class="footer-brand">
+        <a href="#hero" class="brand" aria-label="Flick POS Home">
+          <svg class="brand-icon" width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <rect width="36" height="36" rx="10" fill="currentColor" class="brand-bg"/>
+            <path d="M20.5 8L12 20h6l-2.5 8L24 16h-6l2.5-8z" fill="white"/>
+          </svg>
+          <span class="brand-name">Flick<span class="brand-accent">POS</span></span>
+        </a>
+        <p class="footer-tagline">Fast. Reliable. Built for Indian Retail.</p>
+      </div>
+
+      <!-- Footer Navigation -->
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-heading">Product</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-heading">More</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#hero">About Flick POS</a></li>
+            <li><a href="#roadmap">Launch Updates</a></li>
+            <li><a href="#waitlist">Contact the Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-group">
+          <h4 class="footer-nav-heading">Stay Updated</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#roadmap">Product Updates</a></li>
+            <li><a href="#waitlist">Early Access</a></li>
+            <li><a href="#waitlist">Join Waitlist</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Flick POS. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ========================================================
+       JAVASCRIPT (Phase 4)
+       ======================================================== -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>
