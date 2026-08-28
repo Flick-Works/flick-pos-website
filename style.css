@@ -1733,11 +1733,38 @@ html[data-theme="light"] .hero-eyebrow {
 }
 
 @media (max-width: 767px) {
-  .hero-visual { height: 480px; }
-  .hero-visual--dual .phone-mockup--analytics { transform: translateZ(-50px) rotateY(-5deg) translate(60px, -18px) scale(0.78); }
-  .hero-visual--dual .phone-mockup--home { transform: translateZ(20px) rotateY(5deg) translate(-38px, 12px) scale(0.80); }
-  .hero-visual--dual.is-swapped .phone-mockup--analytics { top: auto; right: auto; bottom: 20px; left: 0; transform: translateZ(20px) rotateY(5deg) translate(-38px, 12px) scale(0.80); }
-  .hero-visual--dual.is-swapped .phone-mockup--home { top: 20px; right: 0; bottom: auto; left: auto; transform: translateZ(-50px) rotateY(-5deg) translate(60px, -18px) scale(0.78); }
+  .hero-inner {
+    width: 100%;
+    margin-inline: 0;
+  }
+  .hero-content,
+  .hero-visual {
+    margin-inline: auto;
+  }
+  .hero-visual { height: 640px; }
+  .hero-visual--dual .phone-mockup--analytics { display: none; }
+  .hero-visual--dual .phone-mockup--home {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    width: min(320px, calc(100vw - 40px));
+    height: 640px;
+    transform: translateX(-50%);
+  }
+  .hero-visual--dual.is-swapped .phone-mockup--analytics {
+    display: block;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    width: min(320px, calc(100vw - 40px));
+    height: 640px;
+    transform: translateX(-50%);
+  }
+  .hero-visual--dual.is-swapped .phone-mockup--home { display: none; }
+  .hero-visual--dual.is-swapped .phone-mockup--analytics { display: block; top: 0; right: auto; bottom: auto; left: 50%; width: min(320px, calc(100vw - 40px)); height: 640px; transform: translateX(-50%); }
+  .hero-visual--dual.is-swapped .phone-mockup--home { display: none; }
   .float-badge-1 { top: 0; right: -5%; font-size: 11px; padding: 6px 12px; }
   .float-badge-2 { bottom: 5%; left: -5%; font-size: 11px; padding: 6px 12px; }
 }
@@ -3943,6 +3970,10 @@ html[data-theme="light"] .float-badge::before {
 .profile-activity:last-child > span { color: #17d99c; background: rgba(20,190,130,.16); }
 .profile-activity strong { display: block; color: #fff; font-size: 11px; font-weight: 500; }
 .profile-activity small { color: rgba(255,255,255,.45); font-size: 9px; }
+
+.khata-content {
+  padding-bottom: 88px;
+}
 
 .reports-ui {
   gap: 14px;
