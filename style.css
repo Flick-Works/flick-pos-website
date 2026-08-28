@@ -3944,6 +3944,44 @@ html[data-theme="light"] .float-badge::before {
 .profile-activity strong { display: block; color: #fff; font-size: 11px; font-weight: 500; }
 .profile-activity small { color: rgba(255,255,255,.45); font-size: 9px; }
 
+.reports-ui {
+  gap: 14px;
+  padding: 34px 14px 14px;
+  background: #08090c;
+  color: #fff;
+}
+.reports-header { display: flex; align-items: center; gap: 10px; }
+.reports-header h3 { font-size: 17px; }
+.reports-back-btn { color: #fff; font-size: 24px; line-height: 1; }
+.report-filters { display: flex; gap: 8px; overflow-x: auto; padding: 2px 0 4px; }
+.report-filters::-webkit-scrollbar { display: none; }
+.report-filter { flex: 0 0 auto; padding: 9px 13px; border: 1px solid rgba(255,255,255,.10); border-radius: 18px; color: rgba(255,255,255,.62); background: rgba(255,255,255,.04); font-size: 10px; white-space: nowrap; }
+.report-filter.is-active { color: #fff; background: #287dff; border-color: #287dff; box-shadow: 0 6px 16px rgba(40,125,255,.28); }
+.report-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.report-metric { min-height: 112px; padding: 14px; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 10px 20px rgba(0,0,0,.18); }
+.report-metric-icon { display: grid; place-items: center; width: 30px; height: 30px; margin-bottom: 12px; border-radius: 50%; background: rgba(255,255,255,.14); color: rgba(255,255,255,.72); font-size: 14px; }
+.report-metric small { display: block; color: rgba(255,255,255,.68); font-size: 10px; }
+.report-metric strong { display: block; margin-top: 5px; color: #fff; font-size: 21px; font-family: var(--font-display); }
+.report-metric--revenue { background: linear-gradient(145deg, #08774e, #075f46); }
+.report-metric--profit { background: linear-gradient(145deg, #214da0, #1d3d88); }
+.report-metric--sold { background: linear-gradient(145deg, #94480d, #6f3108); }
+.report-metric--discounts { background: linear-gradient(145deg, #5b21a5, #43137f); }
+.report-chart { padding: 16px 14px 12px; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: linear-gradient(145deg, rgba(30,32,36,.92), rgba(8,42,35,.72)); box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 10px 24px rgba(0,0,0,.18); }
+.report-chart-title { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 13px; }
+.report-chart-title span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; color: #2bc8ff; background: rgba(0,150,220,.20); font-size: 17px; }
+.report-bars { display: flex; align-items: flex-end; justify-content: space-between; height: 132px; gap: 5px; }
+.report-bars > div { display: flex; flex: 1; height: 100%; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; min-width: 0; }
+.report-bars b { color: rgba(255,255,255,.50); font-size: 8px; font-weight: 500; }
+.report-bars i { display: block; width: min(24px, 100%); min-height: 4px; border-radius: 6px 6px 0 0; background: #12addc; box-shadow: 0 0 10px rgba(18,173,220,.22); }
+.report-bars .is-highlight i { background: #14bfe9; box-shadow: 0 0 14px rgba(20,191,233,.46); }
+.report-bars small { color: rgba(255,255,255,.65); font-size: 9px; }
+.report-section-title { margin: 3px 2px 0; font-size: 14px; font-weight: 800; }
+.top-seller-row { display: flex; align-items: center; gap: 10px; padding: 12px; border: 1px solid rgba(255,255,255,.12); border-radius: 18px; background: linear-gradient(110deg, rgba(13,68,54,.76), rgba(37,39,42,.84)); }
+.top-seller-row > span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; color: #ffe500; background: rgba(205,194,0,.22); font-size: 11px; font-weight: 800; }
+.top-seller-row strong { flex: 1; font-size: 13px; }
+.top-seller-row small { padding: 8px 9px; border-radius: 9px; color: rgba(255,255,255,.82); background: rgba(255,255,255,.12); font-size: 10px; }
+.report-generate-btn { margin-top: auto; padding: 14px; border-radius: 22px; color: #fff; background: linear-gradient(135deg, #6c27e8, #8d2cff); box-shadow: 0 10px 22px rgba(115,40,230,.34), inset 0 1px 0 rgba(255,255,255,.24); font-size: 13px; font-weight: 800; }
+
 /* Specific Sub-UI Styling */
 .sub-ui {
   display: flex;
