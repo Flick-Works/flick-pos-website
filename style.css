@@ -1351,6 +1351,7 @@ html[data-theme="light"] .hero-eyebrow {
   --color-secondary-container: hsl(160, 50%, 14%);
   --color-tertiary: hsl(28, 100%, 65%);
   --color-tertiary-container: hsl(28, 50%, 16%);
+  --color-surface: hsl(240, 16%, 8%);
   --color-on-surface: hsl(240, 12%, 92%);
   --color-on-surface-variant: hsl(240, 8%, 62%);
   --color-on-surface-muted: hsl(240, 6%, 42%);
